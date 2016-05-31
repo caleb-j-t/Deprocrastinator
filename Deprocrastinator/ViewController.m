@@ -55,4 +55,12 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger zero = 0;
+    NSUInteger location = self.toDoItems[indexPath.row].length;
+    NSRange range = NSMakeRange(zero, location);
+    [[self.toDoItems objectAtIndex:indexPath.row] addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:range];
+    [self.tableView reloadData];
+}
+
 @end
